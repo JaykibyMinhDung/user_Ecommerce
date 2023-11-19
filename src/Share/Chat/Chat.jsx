@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import io from "socket.io-client";
 // const socket = io('http://54.254.177.24:5000', { transports : ['websocket']});
 // const socket = io('http://127.0.0.1:5000', { transports : ['websocket']});
-const socket = io("https://server-ecommerce-ivory.vercel.app");
+const socket = io("https://server-ecommerce-ivory.vercel.app", { transports : ['websocket']});
 
 function Chat(props) {
   const [activeChat, setActiveChat] = useState(false);
