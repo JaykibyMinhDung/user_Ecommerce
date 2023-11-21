@@ -7,10 +7,9 @@ import UserAPI from "../API/UserAPI";
 
 function LoginLink(props) {
   const dispatch = useDispatch();
+  const vertifyLogout = window.confirm("Bạn có chắc muốn đăng xuất chứ?");
 
   const onRedirect = () => {
-    const vertifyLogout = window.confirm("Bạn có chắc muốn đăng xuất chứ?");
-    if (vertifyLogout) {
       return UserAPI.postLogout()
         .then((response) => {
           alert(response?.meta || "Server đã bị lỗi vui lòng thử lại!");
@@ -21,12 +20,11 @@ function LoginLink(props) {
           return localStorage.clear();
         })
         .catch((err) => console.log(err));
-    }
   };
 
   return (
-    <li className="nav-item" onClick={onRedirect}>
-      <Link className="nav-link" to="/signin">
+    <li className="nav-item" onClick={vertifyLogout && onRedirect}>
+      <Link className="nav-link" to={vertifyLogout ? "/signin" : ''}>
         ( Logout )
       </Link>
     </li>
