@@ -9,15 +9,18 @@ function LoginLink(props) {
 	const dispatch = useDispatch();
 	
 	const onRedirect = () => {
-	const response = UserAPI.postLogout();
-		localStorage.clear();
-		if (response) {
-			// alertify.set('notifier', 'position', 'bottom-left');
-			// alertify.error('Bạn Đã Xóa Hàng Thành Công!');
-			console.log(response?.meta)
-		}
-		const action = deleteSession('');
-		dispatch(action);
+	const vertifyLogout = window.confirm('Bạn có chắc muốn đăng xuất chứ?')
+	if (vertifyLogout) {
+		const response = UserAPI.postLogout();
+			localStorage.clear();
+			if (response) {
+				// alertify.set('notifier', 'position', 'bottom-left');
+				// alertify.error('Bạn Đã Xóa Hàng Thành Công!');
+				console.log(response?.meta)
+			}
+			const action = deleteSession('');
+			dispatch(action);
+	}
 	};
 
 	return (
