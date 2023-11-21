@@ -6,7 +6,7 @@ import convertMoney from '../convertMoney';
 import './Checkout.css';
 
 import io from 'socket.io-client';
-const socket = io('https://server-ecommerce-ivory.vercel.app');
+const socket = io('https://ecommerce-5262.onrender.com');
 
 function Checkout(props) {
 	const [carts, setCarts] = useState([]);

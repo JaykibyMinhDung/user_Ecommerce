@@ -35,8 +35,8 @@ function Cart(props) {
 	useEffect(() => {
 		const fetchDataRedux = () => {
 			if (!localStorage.getItem('id_user')) {
-				setCart(listCart.data.cart);
-				getTotal(listCart.data.cart);
+				setCart(listCart.data?.cart);
+				getTotal(listCart.data?.cart);
 			}
 		};
 
