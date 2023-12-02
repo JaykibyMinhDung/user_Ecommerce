@@ -13,7 +13,7 @@ function LoginLink(props) {
     if (vertifyLogout) {
       return UserAPI.postLogout()
         .then((response) => {
-          alert(response?.meta || "Server đã bị lỗi vui lòng thử lại!");
+          alert(response?.meta.message || "Server đã bị lỗi vui lòng thử lại!");
         })
         .then(() => {
           const action = deleteSession("");
@@ -29,7 +29,7 @@ function LoginLink(props) {
 
   return (
     <li className="nav-item" onClick={onRedirect}>
-      <Link className="nav-link">
+      <Link className="nav-link" to="">
         {/*  to={"/signin"} */}
         ( Logout )
       </Link>
