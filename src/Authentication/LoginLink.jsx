@@ -20,13 +20,17 @@ function LoginLink(props) {
           dispatch(action);
           return localStorage.clear();
         })
+        .then(() => {
+          <Redirect to='signin' />
+        })
         .catch((err) => console.log(err));
     }
   };
 
   return (
     <li className="nav-item" onClick={onRedirect}>
-      <Link className="nav-link" to={"/signin"}>
+      <Link className="nav-link">
+        {/*  to={"/signin"} */}
         ( Logout )
       </Link>
     </li>
