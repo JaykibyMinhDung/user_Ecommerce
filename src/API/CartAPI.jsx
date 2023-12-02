@@ -17,7 +17,7 @@ const CartAPI = {
 	},
 
 	putToCart: (query) => {
-		const url = `/carts/update${query}`;
+		const url = `/carts/updated${query}`;
 		return axiosClient.put(url);
 	},
 };
