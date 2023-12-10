@@ -92,10 +92,11 @@ function Chat(props) {
     }
   }, [load]);
 
+  const idUserLogin = localStorage.getItem('id_user')
   useEffect(() => {
     setLoad(true);
     // console.log("nguyen nhan 1");
-  }, [roomId]);
+  }, [roomId, idUserLogin]);
 
   //Hàm này dùng để nhận socket từ server gửi lên
   useEffect(() => {
