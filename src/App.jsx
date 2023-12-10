@@ -30,6 +30,8 @@ useEffect(() => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />{" "}
+          <Route path="/shop" component={Shop} />
+          <Route path="/detail/:id" component={Detail} />{" "}
           <Route path="/signin" component={SignIn} />{" "}
           {!hasLogin && (
             <>
@@ -40,9 +42,7 @@ useEffect(() => {
               <Redirect to="signin" />
             </>
           )}
-          <Route path="/detail/:id" component={Detail} />{" "}
           <Route path="/signup" component={SignUp} />{" "}
-          <Route path="/shop" component={Shop} />
           <Route path="/cart" component={Cart} />{" "}
           <Route path="/checkout" component={Checkout} />{" "}
           <Route path="/history" component={History} />{" "}

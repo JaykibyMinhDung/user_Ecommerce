@@ -22,7 +22,8 @@ function LoginLink(props) {
           return localStorage.clear();
         })
         .then(() => {
-          return history.push('/signin');
+          history.push('/signin');
+          return window.location.reload(); 
         })
         .catch((err) => console.log(err));
     }
