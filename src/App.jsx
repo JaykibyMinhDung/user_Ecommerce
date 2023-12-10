@@ -30,19 +30,19 @@ useEffect(() => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />{" "}
-          <Route path="/detail/:id" component={Detail} />{" "}
           <Route path="/signin" component={SignIn} />{" "}
-          <Route path="/signup" component={SignUp} />{" "}
-          <Route path="/shop" component={Shop} />
           {!hasLogin && (
             <>
               {/* <Route exact path="/" component={Home} />{" "}
               <Route path="/detail/:id" component={Detail} />{" "}
               <Route path="/signin" component={SignIn} />{" "}
-              <Route path="/shop" component={Shop} /> */}
+            <Route path="/shop" component={Shop} /> */}
               <Redirect to="signin" />
             </>
           )}
+          <Route path="/detail/:id" component={Detail} />{" "}
+          <Route path="/signup" component={SignUp} />{" "}
+          <Route path="/shop" component={Shop} />
           <Route path="/cart" component={Cart} />{" "}
           <Route path="/checkout" component={Checkout} />{" "}
           <Route path="/history" component={History} />{" "}
