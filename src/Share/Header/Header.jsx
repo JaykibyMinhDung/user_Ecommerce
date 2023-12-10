@@ -37,7 +37,7 @@ function Header(props) {
 
 	const [loginUser, setLoginUser] = useState(false);
 	const [nameUser, setNameUser] = useState(false);
-
+	const idLocalStorage = localStorage.getItem('id_user')
 	useEffect(() => {
 		if (!idUser) {
 			setLoginUser(false);
@@ -46,7 +46,7 @@ function Header(props) {
 			setLoginUser(true);
 			setNameUser(true);
 		}
-	}, [idUser]);
+	}, [idUser, idLocalStorage]);
 
 	const handlerActive = (value) => {
 		setActive(value);
