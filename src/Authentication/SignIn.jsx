@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import UserAPI from '../API/UserAPI';
 import { addSession } from '../Redux/Action/ActionSession';
 import './Auth.css';
@@ -10,7 +10,7 @@ import CartAPI from '../API/CartAPI';
 function SignIn(props) {
 	//listCart được lấy từ redux
 	const listCart = useSelector((state) => state.Cart.listCart);
-
+	const history = useHistory()
 	const [email, setEmail] = useState('');
 
 	const [password, setPassword] = useState('');
@@ -99,6 +99,7 @@ function SignIn(props) {
 							dispatch(action);
 
 							setCheckPush(true);
+							history.push('/');
 							return window.location.reload()
 						// }
 					}
