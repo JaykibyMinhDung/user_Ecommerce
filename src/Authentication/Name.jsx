@@ -10,7 +10,7 @@ function Name(props) {
 			const response = await UserAPI.getDetailData(
 				localStorage.getItem('id_user')
 			);
-			setName(response);
+			setName(response.data.user);
 		};
 
 		fetchData();
@@ -26,7 +26,7 @@ function Name(props) {
 				aria-haspopup='true'
 				aria-expanded='false'>
 				<i className='fas fa-user-alt mr-1 text-gray'></i>
-				{name.fullname}
+				{name.fullName}
 			</a>
 			<div className='dropdown-menu mt-3' aria-labelledby='pagesDropdown'>
 				<a

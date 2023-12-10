@@ -37,7 +37,6 @@ function Header(props) {
 
 	const [loginUser, setLoginUser] = useState(false);
 	const [nameUser, setNameUser] = useState(false);
-	console.log(loginUser)
 
 	useEffect(() => {
 		if (!idUser) {
