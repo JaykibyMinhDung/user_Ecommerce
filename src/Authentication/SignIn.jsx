@@ -111,6 +111,7 @@ function SignIn(props) {
 		const fetchData = async () => {
 			//Lần đầu sẽ không thực hiện insert được vì addCart = ''
 			if (checkPush === true) {
+				
 				for (let i = 0; i < listCart.length; i++) {
 					//Nó sẽ lấy idUser và idProduct và count cần thêm để gửi lên server
 					const params = {
