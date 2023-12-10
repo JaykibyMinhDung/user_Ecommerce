@@ -99,6 +99,7 @@ function SignIn(props) {
 							dispatch(action);
 
 							setCheckPush(true);
+							return window.location.reload()
 						// }
 					}
 				}
