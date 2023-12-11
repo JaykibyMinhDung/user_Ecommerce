@@ -40,9 +40,9 @@ useEffect(() => {
               <Route path="/signin" component={SignIn} />{" "}
             <Route path="/shop" component={Shop} /> */}
               <Redirect to="signin" />
+              <Route path="/signup" component={SignUp} />{" "}
             </>
           )}
-          <Route path="/signup" component={SignUp} />{" "}
           <Route path="/cart" component={Cart} />{" "}
           <Route path="/checkout" component={Checkout} />{" "}
           <Route path="/history" component={History} />{" "}
