@@ -32,6 +32,7 @@ useEffect(() => {
           <Route exact path="/" component={Home} />{" "}
           <Route path="/shop" component={Shop} />
           <Route path="/detail/:id" component={Detail} />{" "}
+          <Route path="/signup" component={SignUp} />{" "}
           <Route path="/signin" component={SignIn} />{" "}
           {!hasLogin && (
             <>
@@ -40,7 +41,6 @@ useEffect(() => {
               <Route path="/signin" component={SignIn} />{" "}
             <Route path="/shop" component={Shop} /> */}
               <Redirect to="signin" />
-              <Route path="/signup" component={SignUp} />{" "}
             </>
           )}
           <Route path="/cart" component={Cart} />{" "}
